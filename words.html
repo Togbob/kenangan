@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_2.css" type="text/css" media="all">
+</head>
+<body class="has-topbar">
+    <!-- <nav class="topbar">
+        <ul>
+            <li><a href="words.html" class="active">Story</a></li>
+        </ul> -->
+</nav>
+<br><br><br><br><br><br>
+    <script src="animasi_2.js"></script>
+    <script src="spots.js"></script>
+
+    <!-- Audio: autoplay (attempt) + loop. Jika autoplay diblokir, akan diputar saat interaksi pertama -->
+    <audio id="bg-audio" preload="auto" loop>
+        <source src="lagu/Warm-Memories-Emotional-Inspiring-Piano(chosic.com).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        (function(){
+            const audio = document.getElementById('bg-audio');
+            if (!audio) return;
+            audio.volume = 0.6;
+
+            function tryPlay() {
+                // Beberapa browser memblokir autoplay tanpa gesture; tangani promise rejection
+                const p = audio.play();
+                if (p !== undefined) {
+                    p.catch(() => {
+                        // Jika diblokir, tunggu gesture pengguna lalu coba lagi
+                        const resumeOnGesture = () => {
+                            audio.play().catch(()=>{});
+                            window.removeEventListener('click', resumeOnGesture, true);
+                            window.removeEventListener('keydown', resumeOnGesture, true);
+                        };
+                        window.addEventListener('click', resumeOnGesture, true);
+                        window.addEventListener('keydown', resumeOnGesture, true);
+                    });
+                }
+            }
+
+            if (document.readyState === 'complete' || document.readyState === 'interactive') {
+                tryPlay();
+            } else {
+                document.addEventListener('DOMContentLoaded', tryPlay);
+            }
+        })();
+    </script>
+
+    <header class="big-title">
+        <h1>Story</h1>
+    </header>    
+    <p class="description">ini isinya bakalan menceritakan awal pacaran sampai kita berpisah. dan nanti di halaman terakhir akan ada surat dari perasaan yang terpendam.</p>
+<br><br><br><br><br><br>
+    <main class="gallery">
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_1.jpg" alt="foto 1" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Awal di Seragam</h3>
+                <time class="photo-date">??/09/2024</time>
+                <div class="box-text">
+                    <p>Hahaha. lucu deh kamu foto bareng sama aku walaupun dari jauh. tapi waktu itu aku sebenarnya aku sadar ada cewek (kamu) lagi foto-foto. yaa, walau belum saling kenal waktu itu sih. Lihat foto ini, Aku jadi kangen waktu kamu masih love in secret sama aku.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_2.jpg" alt="foto 2" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Kunjangan Paling Indah</h3>
+                <time class="photo-date">19/10/2024</time>
+                <div class="box-text">
+                    <p>Jadi pengen balik lagi pas aku ulang tahun ke 17. waktu kamu kasih hadiah sama aku, kamu datang ke acara ulang tahunku, aku pakai baju yang kamu kasih, makasih ya, sudah menambah kenangan yang indah buat aku. jadi kangen berat dehh. dipikir-pikir lebih seru ulang tahun ke 17 dari pada ulang tahun ke 18 🙂.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_3.jpg" alt="foto 3" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Pulang Penuh Kisah</h3>
+                <time class="photo-date">19/10/2024</time>
+                <div class="box-text">
+                    <p>ini waktu momen kamu mau pulang dari ulang tahunku di rumahku. waktu itu aku pikir kamu bakalan pulang dengan teman-temen kamu Nadin, Piyu, Janu tapi malah pulang sama aku Hahaha. tapi tidak apa sih, aku juga senang kita bisa jalan bersama 🥰.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_4.jpg" alt="foto 4" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Kenangan Indah</h3>
+                <time class="photo-date">20/11/2024</time>
+                <div class="box-text">
+                    <p>Haha, Lucunyaa kita pertama kali ngedate ke mall dan nonton film bersama dan makan bersama, setelah itu kita jalan-jalan keliling entah kemana, yaa walaupun pada akhirnya kena tilang. Yaa walaupun itu salahku sih, Maaf yah. Maaf yah pada first date kita tidak berjalan mulus semestinya, mungkin ini first date terburuk yang pernah kamu rasakan. Aku minta maaf denganmu dengan sungguh-sungguh.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_5.jpg" alt="foto 5" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Lari Menuju Jantungmu</h3>
+                <time class="photo-date">17/11/2024</time>
+                <div class="box-text">
+                    <p>Ini ketika kita running date di taruna. disini kita niatnya lari serius tapi katanya kamu nggak tau cara lari Haha, ujung-ujungnya malah banyak jajannya Hahaha.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_6.jpg" alt="foto 6" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Pergi Dengan Happy Pulang Dengan Tragedi</h3>
+                <time class="photo-date">9/12/2024</time>
+                <div class="box-text">
+                    <p>Di balik foto ini ada tragedi haha. Awalnya kita berdua jalan-jalan sehabis pulang sekolah dan beli momoyo, pergi ketaman dan sehabis itu aku antar pulang kamu ke rumah karena aku kebelet berak. Seharusnya aku dengerin kata-kata mu buat jangan pulang dulu tapi aku ngotot buat pulang ke rumah, alhasilnya aku kecelakaan, tabrak mobil, dan buat alis aku robek, tapi alhamdulillah aku aman-aman saja walau motor jadi imbasnya. Maaf ya aku tidak ngedengerin kamu.</p>
+                </div>    
+            </div>
+        </section>
+        
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_7.jpg" alt="foto 7" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Jepretan Tahun Baru Kita</h3>
+                <time class="photo-date">31/12/2024</time>
+                <div class="box-text">
+                    <p>Maaf ya cuma ada foto ini yang waktu kita fotobox. Tapi kamu jadi cewek pertama yang ajak aku beginian, buat aku jadi buka dunia baru. “Ternyata begini ya rasanya pacaran”. di ajak ke mall, Dll.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_8.jpg" alt="foto 8" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Bayangan Yang Lucu</h3>
+                <time class="photo-date">26/01/2025</time>
+                <div class="box-text">
+                    <p>Lucu yaa, kita foto bayangan kita bersama. Ini kita habis ngapain ya?, kalo nggak salah sih kita ngerakit lego sama-sama di malam hari, iya kan?.</p>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_9.jpg" alt="foto 9" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Cinta di Ujung Senja, Dan Drama</h3>
+                <time class="photo-date">15/03/2025</time>
+                <div class="box-text">
+                    <p>Ini foto kita ke pantai bersama, dan lihat sunset bersama. Tapi ngomong-ngomong soal ke pantai  kamu ingat nggak kalau kita pernah berantem sehabis pulang dari pantai. Haha, awal mulanya aman-aman saja tapi awal mula kita berantem karna aku ngomong gini “Buat apa sih?, anniversary-anniversary’an.”. Aku ngomong gitu karna cuma bertanya saja, tidak ada maksud lain. Dan pas pulangnya kamu bikin kesel aku, dan akhirnya buat aku marah dan pukul motor Dll. dan seketika kamu minta turun dari motor, bla bla bla singkat cerita. Aku kerumah kamu ketemu orang tua kamu buat minta maaf karna sudah kasar sama kamu. Dan bla bla bla ujung-ujungnya baikan dan aku belikan kamu nasi goreng Wkwk.</p>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_10.jpg" alt="foto 10" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Pesta Air Damkar</h3>
+                <time class="photo-date">29/04/2025</time>
+                <div class="box-text">
+                    <p>Wahh asik ya waktu kita di siram damkar di sekolah, dan main sama teman-teman masing-masing.</p>
+            </div>
+        </section>
+
+                <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_11(1).jpg" alt="foto 11" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Acara Terakhir yang Menggantung</h3>
+                <time class="photo-date">09/07/2025</time>
+                <div class="box-text">
+                    <p>hmm, acara kelulusan kita asik sihh, cuma agak gimana ya, nggak sebagus sama sekolah lainnya. Tapi tidak apa lah ya, buat acara terakhir kita. Walaupun agak mengecewakan.</p>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_12(1).webp" alt="foto 12" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Cahaya Malam dan Jajanan Kota</h3>
+                <time class="photo-date">26/08/2025</time>
+                <div class="box-text">
+                    <p>Asik yah, kita jalan-jalan bersama di malam hari sambil beli jajan, terus foto-foto.</p>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_13.png" alt="foto 13" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Pertolongan Kecil, Kenangan Besar</h3>
+                <time class="photo-date">03/09/2025</time>
+                <div class="box-text">
+                    <p>Foto ini tercipta, awalnya aku cuma mau main PS sendiri sambil keliling entah kemana, dan kamu tiba-tiba chat bla bla bla dan kamu minta tolong buat beliin mie gacoan, dan aku beliin terus bla bla bla tiba-tiba foto-foto di laptop baru kamu.</p>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_14.jpeg" alt="foto 14" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Jalan Tanpa Rencana, Game Penuh Tawa</h3>
+                <time class="photo-date">14/09/2025</time>
+                <div class="box-text">
+                    <p>di sini awalnya cuma jalan-jalan ndak tau mau kemana, terus aku ajak kamu main PS.</p>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_15(2).jpg" alt="foto 15" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">The Power of Gabut</h3>
+                <time class="photo-date">15/09/2025</time>
+                <div class="box-text">
+                    <p>Yaa seperti biasa, kita jalan-jalan beli jajan, terus kita ketemu Dwi di Mufida karna kita gabut juga, terus foto dan video nggak jelas, dan habis itu kita pulang.</p>
+            </div>
+        </section>
+
+        <section class="photo-box">
+            <div class="box-image">
+                <img src="gambar/awal_kita_pacaran/awal_&_akhir_kita_pacaran_16.jpg" alt="foto 16" loading="lazy">
+            </div>
+            <div class="box-content">
+                <h3 class="photo-title">Melepas Rindu, Membawa Berkah</h3>
+                <time class="photo-date">22/11/2025</time>
+                <div class="box-text">
+                    <p>setelah sekian lama tidak ketemu Disini aku menjenguk mama Micha karena aku tau kalau mama Micha masuk rumah sakit, dan aku bawakan oleh-oleh buat mama Micha. Semoga panjang umur yaa mama Micha 🙏</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
